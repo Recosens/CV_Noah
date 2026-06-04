@@ -75,6 +75,56 @@
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
 
+
+
+        /* Achtergrond placeholders per sectie
+           Vervang enkel het pad tussen url('...') door jouw foto.
+           Voorbeeld: style="--section-bg: url('./tennis.jpg');" */
+        .section-bg {
+            position: relative;
+            background-image:
+                linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.86) 100%),
+                var(--section-bg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .section-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-bg-soft {
+            background-image:
+                linear-gradient(90deg, rgba(5,5,5,0.94) 0%, rgba(5,5,5,0.82) 50%, rgba(5,5,5,0.94) 100%),
+                var(--section-bg);
+        }
+
+        .section-bg-right {
+            background-position: center right;
+        }
+
+        .section-bg-left {
+            background-position: center left;
+        }
+
+        .card-bg {
+            position: relative;
+            isolation: isolate;
+            background-image:
+                linear-gradient(135deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 55%, rgba(0,0,0,0.92) 100%),
+                var(--card-bg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .card-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
         /* Sleek Timeline Line */
         .timeline-line::before {
             content: '';
@@ -107,7 +157,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-12 px-6 sm:px-12 lg:px-24 overflow-hidden">
+    <section id="home" class="section-bg section-bg-right relative min-h-screen flex items-center pt-24 pb-12 px-6 sm:px-12 lg:px-24 overflow-hidden" style="--section-bg: url('./backgrounds/engineering-background.jpg');">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <!-- Text Content -->
@@ -151,7 +201,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 bg-[#050505] text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900">
+    <section id="about" class="section-bg section-bg-soft py-32 text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900" style="--section-bg: url('./backgrounds/blueprint-background.jpg');">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div class="lg:col-span-4 animate-on-scroll">
@@ -176,7 +226,7 @@
     </section>
 
     <!-- Entrepreneurship / Venture Section -->
-    <section id="venture" class="py-32 bg-black text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900">
+    <section id="venture" class="section-bg section-bg-left py-32 text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900" style="--section-bg: url('./backgrounds/tennis-background.jpg');">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16 animate-on-scroll">
                 <h2 class="text-xs font-heading font-medium uppercase tracking-[0.3em] text-gray-500 mb-4">02 / Current Venture</h2>
@@ -228,7 +278,7 @@
     </section>
 
     <!-- Experience Timeline -->
-<section id="experience" class="py-32 bg-[#050505] text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900">
+<section id="experience" class="section-bg section-bg-soft py-32 text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900" style="--section-bg: url('./backgrounds/industrial-background.jpg');">
     <div class="max-w-6xl mx-auto">
         
         <!-- Title -->
@@ -338,7 +388,7 @@
 </section>
 
     <!-- Leadership & Team Dynamics -->
-    <section id="leadership" class="py-32 bg-black text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900">
+    <section id="leadership" class="section-bg py-32 text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900" style="--section-bg: url('./Basket_achtergrond.jfif');">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16 text-center animate-on-scroll">
                 <h2 class="text-xs font-heading font-medium uppercase tracking-[0.3em] text-gray-500 mb-4">04 / Dynamics</h2>
@@ -347,7 +397,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Basketball -->
-                <div class="group border border-gray-800 p-10 hover:border-white transition-colors duration-500 relative overflow-hidden animate-on-scroll">
+                <div class="card-bg group border border-gray-800 p-10 hover:border-white transition-colors duration-500 relative overflow-hidden animate-on-scroll" style="--card-bg: url('./backgrounds/basketball-background.jpg');">
                     <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                         <i data-lucide="users" class="w-24 h-24"></i>
                     </div>
@@ -356,12 +406,6 @@
                         Years of competitive play have instilled a deep understanding of team dynamics, high-pressure execution, and collective resilience. Success on the court requires the same strategic alignment and split-second decision-making as success in business.
                     </p>
                     <div class="flex flex-wrap gap-2 relative z-10">
-                        <!-- Image -->
-                        <div class="mt-8 relative z-10">
-                            <img src="https://via.placeholder.com/600x400" 
-                                 alt="Basketball team"
-                                 class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500 rounded-lg">
-                        </div>
                         <span class="px-3 py-1 bg-[#111] text-xs font-heading uppercase tracking-widest text-gray-300">Discipline</span>
                         <span class="px-3 py-1 bg-[#111] text-xs font-heading uppercase tracking-widest text-gray-300">Teamwork</span>
                         <span class="px-3 py-1 bg-[#111] text-xs font-heading uppercase tracking-widest text-gray-300">Execution</span>
@@ -369,7 +413,7 @@
                 </div>
 
                 <!-- Youth Movement -->
-                <div class="group border border-gray-800 p-10 hover:border-white transition-colors duration-500 relative overflow-hidden animate-on-scroll delay-100">
+                <div class="card-bg group border border-gray-800 p-10 hover:border-white transition-colors duration-500 relative overflow-hidden animate-on-scroll delay-100" style="--card-bg: url('./backgrounds/youth-movement-background.jpg');">
                     <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                         <i data-lucide="flag" class="w-24 h-24"></i>
                     </div>
@@ -378,11 +422,6 @@
                         Serving as a leader in a youth organization developed my ability to guide, motivate, and take responsibility for others. It honed my interpersonal skills and taught me how to communicate vision effectively to diverse groups.
                     </p>
                     <div class="flex flex-wrap gap-2 relative z-10">
-                        <div class="mt-8 relative z-10">
-                            <img src="https://via.placeholder.com/600x400" 
-                                 alt="Youth movement"
-                                 class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500 rounded-lg">
-                        </div>
                         <span class="px-3 py-1 bg-[#111] text-xs font-heading uppercase tracking-widest text-gray-300">Leadership</span>
                         <span class="px-3 py-1 bg-[#111] text-xs font-heading uppercase tracking-widest text-gray-300">Responsibility</span>
                         <span class="px-3 py-1 bg-[#111] text-xs font-heading uppercase tracking-widest text-gray-300">Empathy</span>
@@ -393,7 +432,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="py-24 bg-[#050505] text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900">
+    <section class="section-bg section-bg-soft py-24 text-white px-6 sm:px-12 lg:px-24 border-t border-gray-900" style="--section-bg: url('./backgrounds/skills-background.jpg');">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-xs font-heading font-medium uppercase tracking-[0.3em] text-gray-500 mb-12 text-center animate-on-scroll">05 / Core Competencies</h2>
             
@@ -421,7 +460,7 @@
     </section>
 
     <!-- Contact Section (REQUIRED STRUCTURE) -->
-    <section id="contact" class="py-32 bg-black text-white border-t border-gray-900">
+    <section id="contact" class="section-bg py-32 text-white border-t border-gray-900" style="--section-bg: url('./backgrounds/contact-background.jpg');">
         <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
